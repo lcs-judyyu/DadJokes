@@ -11,6 +11,7 @@
 		5A88F0E127C5449100A9488D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88F0E027C5449100A9488D /* ContentView.swift */; };
 		5A88F0E327C5449600A9488D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A88F0E227C5449600A9488D /* Assets.xcassets */; };
 		5A88F0E627C5449600A9488D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A88F0E527C5449600A9488D /* Preview Assets.xcassets */; };
+		5A88F0EF27C54A4500A9488D /* DadJoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A88F0EE27C54A4500A9488D /* DadJoke.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		5A88F0E027C5449100A9488D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5A88F0E227C5449600A9488D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A88F0E527C5449600A9488D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5A88F0EE27C54A4500A9488D /* DadJoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJoke.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				5A88F0DE27C5449100A9488D /* DadJokesApp.swift */,
-				5A88F0E027C5449100A9488D /* ContentView.swift */,
+				5A88F0EC27C549EA00A9488D /* Model */,
+				5A88F0ED27C549F400A9488D /* Views */,
 				5A88F0E227C5449600A9488D /* Assets.xcassets */,
 				5A88F0E427C5449600A9488D /* Preview Content */,
 			);
@@ -65,6 +68,22 @@
 				5A88F0E527C5449600A9488D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5A88F0EC27C549EA00A9488D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A88F0EE27C54A4500A9488D /* DadJoke.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5A88F0ED27C549F400A9488D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A88F0E027C5449100A9488D /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +158,7 @@
 			files = (
 				5A88F0E127C5449100A9488D /* ContentView.swift in Sources */,
 				5A88F0DF27C5449100A9488D /* DadJokesApp.swift in Sources */,
+				5A88F0EF27C54A4500A9488D /* DadJoke.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

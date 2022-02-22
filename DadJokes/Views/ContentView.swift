@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+//MARK: Stored Properties
+var currentJoke: DadJoke = DadJoke(id: "", joke: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", status: 0)
+
+//MARK: Computed Properties
+
 struct ContentView: View {
     var body: some View {
         VStack(spacing: 20) {
             
-            Text("How do you organize a space party? You planet.")
+            Text(currentJoke.joke)
                 .multilineTextAlignment(.leading)
                 .font(.title2)
                 .padding(30)
