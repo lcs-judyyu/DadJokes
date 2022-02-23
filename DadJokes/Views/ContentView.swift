@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+struct ContentView: View {
+
 //MARK: Stored Properties
 @State var currentJoke: DadJoke = DadJoke(id: "",
                                    joke: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -14,7 +16,6 @@ import SwiftUI
 
 //MARK: Computed Properties
 
-struct ContentView: View {
     var body: some View {
         VStack(spacing: 20) {
             
