@@ -14,6 +14,12 @@ struct ContentView: View {
                                               joke: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                                               status: 0)
     
+    //list of favourite joke
+    @State var favourites: [DadJoke] = [] //empty list
+    
+    //ckeck if currentjoke is already a favourite
+    @State var currentJokeAddedToFavourites: Bool = false
+    
     //MARK: Computed Properties
     var body: some View {
         VStack(spacing: 20) {
@@ -29,14 +35,19 @@ struct ContentView: View {
                 )
                 .padding(10)
             
-            Button(action: {
-                
-            }, label: {
+
                 Image(systemName: "heart.circle")
                     .resizable()
                     .frame(width: 40, height: 40)
-                    .foregroundColor(Color.black)
-            })
+                    .foregroundColor(currentJokeAddedToFavourites == true ? .red : .secondary) //muted color for the mode
+                    .onTapGesture {
+                        //only add to the list if it is not in there
+                        if currentJokeAddedToFavourites == false {
+                            favourites.append(currentJoke)
+                            //record that this joke is added
+                            currentJokeAddedToFavourites = true
+                        }
+                    }
             
             Button(action: {
                 //task type along asynchronous code within the button and update user interface when data is ready
@@ -55,10 +66,10 @@ struct ContentView: View {
                 Spacer()
             }
             
-            List {
-                Text("Which side of the chicken has more feathers? The outside.")
-                Text("Why did the Clydesdale give the pony a glass of water? Because he was a little horse!")
-                Text("The great thing about stationery shops is they're always in the same place...")
+            //iterate over the list of favourites
+            //each individual favourite is accessible via "currentFavourite"
+            List(favourites, id: \.self) { currentFavourite in
+                Text(currentFavourite.joke)
             }
             
             Spacer()
@@ -104,6 +115,7 @@ struct ContentView: View {
             //                                         |
             //                                         V
             currentJoke = try JSONDecoder().decode(DadJoke.self, from: data)
+            currentJokeAddedToFavourites = false
             
         } catch {
             print("Could not retrieve or decode the JSON from endpoint.")

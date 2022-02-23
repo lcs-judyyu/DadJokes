@@ -8,7 +8,7 @@
 import Foundation
 
 //conforms to the decodable protocol
-struct DadJoke: Decodable {
+struct DadJoke: Decodable, Hashable {
     let id: String
     let joke: String
     let status: Int
